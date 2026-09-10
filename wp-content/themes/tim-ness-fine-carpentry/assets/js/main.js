@@ -27,6 +27,26 @@
     });
   }
 
+  const revealItems = document.querySelectorAll(
+    '.home-feature-card, .service-item, .value-card, .portfolio-piece, .process-step-rich, .area-card, .split-image'
+  );
+
+  if ('IntersectionObserver' in window && revealItems.length) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    revealItems.forEach((item, index) => {
+      item.classList.add('reveal-ready');
+      item.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 70}ms`);
+      revealObserver.observe(item);
+    });
+  }
+
   const calendar = document.querySelector('[data-calendar]');
   const appointmentForm = document.querySelector('[data-appointment-form]');
 
