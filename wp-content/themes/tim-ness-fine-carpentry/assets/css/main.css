@@ -1746,6 +1746,10 @@ body:not(.home) .nav-cta:hover {
     font-size: 1.08rem;
   }
 
+  .brand-copy small {
+    display: none;
+  }
+
   .hero,
   .hero-inner {
     min-height: 47rem;
