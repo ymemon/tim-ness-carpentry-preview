@@ -59,8 +59,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 		</a>
 
 		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
-			<span class="sr-only">Toggle navigation</span>
-			<span></span><span></span>
+			<span class="sr-only" data-menu-assistive-label>Open navigation</span>
+			<span class="menu-toggle-label" data-menu-label aria-hidden="true">Menu</span>
+			<span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span></span>
 		</button>
 
 		<nav class="site-navigation" id="site-navigation" aria-label="Primary navigation">
